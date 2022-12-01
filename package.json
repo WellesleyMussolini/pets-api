@@ -1,15 +1,20 @@
 {
   "name": "dogs-breed",
   "version": "1.0.0",
-  "description": "",
+  "description": "every single dog's breed information",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Wellesley Mussolini",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
   }
 }
