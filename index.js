@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 
 const APP = express();
 
-const pet_router = require("./src/routers/pet"); 
+const pet_router = require("./src/routers/pet");
 
 APP.use(body_parser.json());
 APP.use(cors());
@@ -14,8 +14,6 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 
-APP.use(pet_router); 
+APP.use(pet_router);
 
-APP.listen(PORT, () => {
-    return console.log("server is up!");
-});
+APP.listen(PORT, () => console.log("server is up!"));
