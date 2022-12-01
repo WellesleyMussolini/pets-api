@@ -1,4 +1,4 @@
-const mongoose = require("../database");
+const mongoose = require("../database/pet.database");
 
 const petSchema = new mongoose.Schema({
     name: String,
