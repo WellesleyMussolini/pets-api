@@ -3,16 +3,19 @@ const cors = require("cors");
 const body_parser = require("body-parser");
 const dotenv = require("dotenv");
 
-dotenv.config();
-
 const APP = express();
+
+const pet_router = require("./src/routers/pet"); 
+
+APP.use(body_parser.json());
+APP.use(cors());
+
+dotenv.config();
 
 const PORT = process.env.PORT;
 
-APP.use(body_parser.urlencoded({extended: false}));
-APP.use(express.json());
-APP.use(cors());
+APP.use(pet_router); 
+
 APP.listen(PORT, () => {
-    console.log("server is up!");
-    return;
+    return console.log("server is up!");
 });
