@@ -27,7 +27,6 @@ export const pet = {
             return response.json({ error: "Failed to create a pet..." });
         }
     },
-
     put: async (request, response) => {
         try {
             const { id } = request.params;
