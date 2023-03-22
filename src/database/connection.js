@@ -9,8 +9,10 @@ const password = process.env.MONGODB_PASSWORD;
 export const connection = async () => {
     try {
         await mongoose.connect(`mongodb+srv://${database}:${password}@cluster0.7xdbvva.mongodb.net/?retryWrites=true&w=majority`);
-        console.log({database: "connected"});
+        console.log({ database: "connected" });
+        return;
     } catch (error) {
-        console.log({ error: error })
+        console.log({ error: error });
+        return;
     };
 };

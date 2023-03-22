@@ -9,7 +9,7 @@
     "start": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "wellesley mussolini",
+  "author": "Wellesley Mussolini",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",

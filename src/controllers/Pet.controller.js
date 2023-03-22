@@ -1,4 +1,7 @@
-import { Pet } from "../models/Pet.model.js"
+import { Pet } from "../models/pet.model.js"
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const pet = {
     get: async (request, response) => {
@@ -10,19 +13,21 @@ export const pet = {
             const { id } = request.params;
             const find_pet = await Pet.findById(id);
             if (!find_pet) response.status(404).json({ message: "Pet does not exist!" });
-            return response.status(200).send(find_pet) || response.status(200).json(find_pet);
+            return response.status(200).json(find_pet);
         } catch {
             return response.status(404).json({ error: "Incorrect pet id" });
         }
     },
     post: async (request, response) => {
-        try{
-            const create_pet = await Pet.create(request.body);
-            return response.status(201).send(create_pet);
-        }catch{
-            return response.json({error: "Failed to create a pet..."});
+        try {
+            const create_pet = request.body;
+            const pet = await Pet.create(create_pet);
+            return response.status(201).send(pet);
+        } catch {
+            return response.json({ error: "Failed to create a pet..." });
         }
     },
+
     put: async (request, response) => {
         try {
             const { id } = request.params;
@@ -37,9 +42,9 @@ export const pet = {
             const { id } = request.params;
             const delete_pet = await Pet.findByIdAndDelete(id);
             if (!delete_pet) response.status(404).json({ message: "Pet does not exist!" });
-            return response.status(200).json({message: "Pet successfully deteled!"});
+            return response.status(200).json({ message: "Pet successfully deteled!" });
         } catch {
-            return response.status(404).json({ error: "Failed to delete the pet... Please, try again later" });
+            return response.status(404).json({ error: "Failed to delete the pet!" });
         }
     },
 };
