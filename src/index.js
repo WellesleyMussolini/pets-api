@@ -8,4 +8,9 @@ const protocol = process.env.PROTOCOL || "http";
 const address = ip.address();
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => console.log(`Server started at "http://localhost:${port}" or "${protocol}://${address}:${port}"`));
+app.listen(port, () => {
+    console.log("Compiled successfully!");
+    console.log("You can now view your app in the browser.");
+    console.log(`Local:            "http://localhost:${port}"`);
+    console.log(`On Your Network:  "${protocol}://${address}:${port}"`);
+});
