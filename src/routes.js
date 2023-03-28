@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", pet.get);
 
-router.get("/:id", pet.get_by_id);
+router.get("/:param", pet.get_param);
 
 router.post("/", pet.post);
 
