@@ -3,14 +3,14 @@ import { pet } from "./controllers/pet.controller.js";
 
 const router = express.Router();
 
-router.get("/", pet.get);
+router.get("/pets", pet.get);
 
-router.get("/:param", pet.get_param);
+router.get("/pets/:param", pet.get_param);
 
-router.post("/", pet.post);
+router.post("/pets", pet.post);
 
-router.put("/:id", pet.put);
+router.put("/pets/:id", pet.put);
 
-router.delete("/:id", pet.delete);
+router.delete("/pets/:id", pet.delete);
 
 export default router;
