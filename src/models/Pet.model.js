@@ -41,7 +41,7 @@ const PetSchema = new Schema({
         required: true,
     },
     fun_facts: {
-        type: String,
+        type: Array,
         required: false,
     },
     weight: {
