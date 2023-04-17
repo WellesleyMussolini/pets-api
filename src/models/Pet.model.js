@@ -5,7 +5,6 @@ const { ObjectId } = Schema;
 const PetSchema = new Schema({
     id: ObjectId,
 
-
     breed: {
         type: String,
         required: true,
