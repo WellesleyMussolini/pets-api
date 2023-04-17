@@ -36,7 +36,6 @@ const PetSchema = new Schema({
         type: String,
         required: true,
     },
-    
     breed_characteristics: {
         type: Object,
         required: true,
