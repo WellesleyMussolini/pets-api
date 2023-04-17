@@ -36,6 +36,14 @@ const PetSchema = new Schema({
         type: String,
         required: true,
     },
+    breed_characteristics: {
+        type: Object,
+        required: true,
+    },
+    fun_facts: {
+        type: String,
+        required: false,
+    },
     weight: {
         type: Object,
         required: true,
@@ -59,15 +67,15 @@ const PetSchema = new Schema({
                 type: String,
             }
         },
-    },  
+    },
     images: {
         type: Array,
         required: true,
-        profile:{
+        profile: {
             type: Object,
             required: false,
         },
-        puppies:{
+        puppies: {
             type: Array,
             require: false,
         },
