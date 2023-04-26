@@ -69,16 +69,20 @@ const PetSchema = new Schema({
         },
     },
     images: {
-        type: Array,
+        type: Object,
         required: true,
         profile: {
-            type: Object,
-            required: false,
+            type: Array,
+            required: true,
         },
         puppies: {
             type: Array,
-            require: false,
+            require: true,
         },
+        gallery: {
+            type: Array,
+            required: true,
+        }
     },
 });
 
