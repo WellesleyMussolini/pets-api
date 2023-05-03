@@ -19,5 +19,12 @@
     "ip": "^1.1.8",
     "mongoose": "^7.0.1",
     "nodemon": "^2.0.21"
+  },
+  "optionalDependencies": {
+    "fsevents": {
+      "os": [
+        "darwin"
+      ]
+    }
   }
 }
