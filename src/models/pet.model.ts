@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
-const { ObjectId } = Schema;
+const { Schema, Types } = mongoose;
+const { ObjectId } = Types;
 
 const PetSchema = new Schema({
     id: ObjectId,
@@ -22,7 +22,7 @@ const PetSchema = new Schema({
     },
     temperament: {
         type: String,
-        require: true,
+        required: true,
     },
     intelligence: {
         type: String,
