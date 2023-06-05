@@ -36,6 +36,16 @@ To use this API locally, follow these steps:
 - `PUT /api/dogs/:id`: Update information about a dog breed by ID.
 - `DELETE /api/dogs/:id`: Delete a dog breed by ID.
 
+## API Endpoints UPDATED
+
+- `GET /pets`: Retrieve a list of all dog breeds.
+- `GET /pets/:id`: Get information about a specific dog breed by ID.
+- `GET /pets/:name`: Get information about a specific dog breed by name.
+- `GET /pets/:param?lang=:language`: Get information about a dog breed by ID or name with language support.
+- `POST /pets`: Create a new dog breed.
+- `PUT /pets/:id`: Update information about a dog breed by ID.
+- `DELETE /pets/:id`: Delete a dog breed by ID.
+
 ## Contribution
 
 Contributions to this API project are welcome! If you find any bugs, have feature suggestions, or want to improve the codebase, feel free to open an issue or submit a pull request.
