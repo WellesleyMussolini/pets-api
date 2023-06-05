@@ -26,17 +26,7 @@ To use this API locally, follow these steps:
 4. Start the server using `npm start`.
 5. Access the API endpoints using a tool like Postman or any web browser.
 
-## API Endpoints
-
-- `GET /api/dogs`: Retrieve a list of all dog breeds.
-- `GET /api/dogs/:id`: Get information about a specific dog breed by ID.
-- `GET /api/dogs/:name`: Get information about a specific dog breed by name.
-- `GET /api/dogs/:param?lang=:language`: Get information about a dog breed by ID or name with language support.
-- `POST /api/dogs`: Create a new dog breed.
-- `PUT /api/dogs/:id`: Update information about a dog breed by ID.
-- `DELETE /api/dogs/:id`: Delete a dog breed by ID.
-
-## API Endpoints UPDATED
+## API Endpoints 
 
 - `GET /pets`: Retrieve a list of all dog breeds.
 - `GET /pets/:id`: Get information about a specific dog breed by ID.
