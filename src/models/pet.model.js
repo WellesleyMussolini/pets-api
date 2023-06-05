@@ -9,40 +9,112 @@ const PetSchema = new Schema({
         required: true,
     },
     life_span: {
-        type: String,
+        type: Object,
         required: true,
+        en:{
+            type: String,
+            required: false,
+        },
+        ptBr:{
+            type: String,
+            required: false,
+        },
     },
     breed_traits: {
-        type: String,
+        type: Object,
         required: true,
+        en:{
+            type: String,
+            required: false,
+        },
+        ptBr:{
+            type: String,
+            required: false,
+        },
     },
     description: {
-        type: String,
+        type: Object,
         required: true,
+        en:{
+            type: String,
+            required: false,
+        },
+        ptBr:{
+            type: String,
+            required: false,
+        },
     },
     temperament: {
-        type: String,
+        type: Object,
         required: true,
+        en:{
+            type: String,
+            required: false,
+        },
+        ptBr:{
+            type: String,
+            required: false,
+        },
     },
     intelligence: {
-        type: String,
+        type: Object,
         required: true,
+        en:{
+            type: String,
+            required: false,
+        },
+        ptBr:{
+            type: String,
+            required: false,
+        },
     },
     breed_group: {
-        type: String,
+        type: Object,
         required: true,
+        en:{
+            type: String,
+            required: false,
+        },
+        ptBr:{
+            type: String,
+            required: false,
+        },
     },
     breed_size: {
-        type: String,
+        type: Object,
         required: true,
+        en:{
+            type: String,
+            required: false,
+        },
+        ptBr:{
+            type: String,
+            required: false,
+        },
     },
     breed_characteristics: {
         type: Object,
         required: true,
+        en:{
+            type: Array,
+            required: false,
+        },
+        ptBr:{
+            type: Array,
+            required: false,
+        },
     },
     fun_facts: {
         type: Array,
         required: false,
+        en:{
+            type: Array,
+            required: false,
+        },
+        ptBr:{
+            type: Array,
+            required: false,
+        },
     },
     weight: {
         type: Object,
