@@ -156,7 +156,6 @@ const PetSchema = new Schema({
             required: true,
         }
     },
-
 });
 
 export const Pet = mongoose.model("Pet", PetSchema);
