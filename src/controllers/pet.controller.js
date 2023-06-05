@@ -12,11 +12,13 @@ export const pet = {
     get_param: async (request, response) => {
         try {
             const { param } = request.params;
-            const find_pet = await PetService.findByParam(param);
-            if (!find_pet) {
-                return response.status(404).json({ message: "Pet not found" });
-            }
-            return response.status(200).json(find_pet);
+            const { lang } = request.query;
+
+            const pet = lang ? await PetService.findByLang(param, lang) : await PetService.findByParam(param);
+
+            if (!pet) return response.status(404).json({ message: "Pet not found" });
+
+            return response.status(200).json(pet);
         } catch (error) {
             console.error(error);
             return response.status(500).json({ message: "Error finding pet" });
