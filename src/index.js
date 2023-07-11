@@ -7,8 +7,9 @@ dotenv.config();
 const protocol = process.env.PROTOCOL || "http";
 const address = ip.address();
 const port = process.env.PORT || 3000;
+const host = "0.0.0.0";
 
-app.listen(port, () => {
+app.listen(port, host, () => {
     console.log("Compiled successfully!");
     console.log("You can now view your app in the browser.");
     console.log(`Local:            "http://localhost:${port}"`);
