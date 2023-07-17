@@ -1,17 +1,7 @@
 import mongoose from "mongoose";
+import breedName from "../validators/breedName.js";
 const { Schema, Types } = mongoose;
 const { ObjectId } = Types;
-
-const BreedSchema = new Schema({
-    en: {
-        type: String,
-        required: true,
-    },
-    ptBr: {
-        type: String,
-        required: true,
-    },
-});
 
 const PetSchema = new Schema({
     id: ObjectId,
@@ -19,15 +9,7 @@ const PetSchema = new Schema({
         type: Schema.Types.Mixed,
         required: true,
         validate: {
-            validator: function (value) {
-                if (typeof value === "string") {
-                    return true;
-                } else if (typeof value === "object") {
-                    const { en, ptBr } = value;
-                    return typeof en === "string" && typeof ptBr === "string";
-                }
-                return false;
-            },
+            validator: breedName,
             message: "Breed must be a string or an object with 'en' and 'ptBr' properties",
         },
     },
