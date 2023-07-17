@@ -2,20 +2,43 @@ import mongoose from "mongoose";
 const { Schema, Types } = mongoose;
 const { ObjectId } = Types;
 
+const BreedSchema = new Schema({
+    en: {
+        type: String,
+        required: true,
+    },
+    ptBr: {
+        type: String,
+        required: true,
+    },
+});
+
 const PetSchema = new Schema({
     id: ObjectId,
     breed: {
-        type: String,
+        type: Schema.Types.Mixed,
         required: true,
+        validate: {
+            validator: function (value) {
+                if (typeof value === "string") {
+                    return true;
+                } else if (typeof value === "object") {
+                    const { en, ptBr } = value;
+                    return typeof en === "string" && typeof ptBr === "string";
+                }
+                return false;
+            },
+            message: "Breed must be a string or an object with 'en' and 'ptBr' properties",
+        },
     },
     life_span: {
         type: Object,
         required: true,
-        en:{
+        en: {
             type: String,
             required: false,
         },
-        ptBr:{
+        ptBr: {
             type: String,
             required: false,
         },
@@ -23,11 +46,11 @@ const PetSchema = new Schema({
     breed_traits: {
         type: Object,
         required: true,
-        en:{
+        en: {
             type: String,
             required: false,
         },
-        ptBr:{
+        ptBr: {
             type: String,
             required: false,
         },
@@ -35,11 +58,11 @@ const PetSchema = new Schema({
     description: {
         type: Object,
         required: true,
-        en:{
+        en: {
             type: String,
             required: false,
         },
-        ptBr:{
+        ptBr: {
             type: String,
             required: false,
         },
@@ -47,11 +70,11 @@ const PetSchema = new Schema({
     temperament: {
         type: Object,
         required: true,
-        en:{
+        en: {
             type: String,
             required: false,
         },
-        ptBr:{
+        ptBr: {
             type: String,
             required: false,
         },
@@ -59,11 +82,11 @@ const PetSchema = new Schema({
     intelligence: {
         type: Object,
         required: true,
-        en:{
+        en: {
             type: String,
             required: false,
         },
-        ptBr:{
+        ptBr: {
             type: String,
             required: false,
         },
@@ -71,11 +94,11 @@ const PetSchema = new Schema({
     breed_group: {
         type: Object,
         required: true,
-        en:{
+        en: {
             type: String,
             required: false,
         },
-        ptBr:{
+        ptBr: {
             type: String,
             required: false,
         },
@@ -83,11 +106,11 @@ const PetSchema = new Schema({
     breed_size: {
         type: Object,
         required: true,
-        en:{
+        en: {
             type: String,
             required: false,
         },
-        ptBr:{
+        ptBr: {
             type: String,
             required: false,
         },
@@ -95,11 +118,11 @@ const PetSchema = new Schema({
     breed_characteristics: {
         type: Object,
         required: true,
-        en:{
+        en: {
             type: Array,
             required: false,
         },
-        ptBr:{
+        ptBr: {
             type: Array,
             required: false,
         },
@@ -107,11 +130,11 @@ const PetSchema = new Schema({
     fun_facts: {
         type: Array,
         required: false,
-        en:{
+        en: {
             type: Array,
             required: false,
         },
-        ptBr:{
+        ptBr: {
             type: Array,
             required: false,
         },
