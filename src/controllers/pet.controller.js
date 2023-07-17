@@ -1,4 +1,4 @@
-import { Pet } from "../models/pet.model.js"
+import { Pet } from "../schemas/pet.schema.js"
 import dotenv from "dotenv";
 import { PetService } from "../services/pet.service.js";
 
