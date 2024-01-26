@@ -149,7 +149,7 @@ const PetSchema = new Schema({
         type: Object,
         required: true,
         profile: {
-            type: Array,
+            type: String,
             required: true,
         },
         puppies: {
